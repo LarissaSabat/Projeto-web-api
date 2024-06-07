@@ -1,3 +1,6 @@
+const formulario = document.querySelector("form");
+const InsNome = document.querySelector (".nome")
+
 function salva () {
 
     fetch("http://localhost:8080/formulario",
@@ -7,7 +10,9 @@ function salva () {
                 'Content-type': 'application/json'
             },
             method: "POST",
-            body: JSON.stringify({a: 1, b:2 })
+            body: JSON.stringify({
+                nome: InsNome.value,
+            })
     })
         .then(function (res) {console.log(res)})
         .catch(function (res) {console.log (res)})
